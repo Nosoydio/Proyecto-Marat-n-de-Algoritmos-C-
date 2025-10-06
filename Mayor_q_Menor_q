@@ -1,0 +1,15 @@
+#include <iostream>
+
+int main() {
+    int a = 7;
+    int b = 8;
+
+    // Comprobamos si 'a' es mayor que 'b'
+    if (a > b) {
+        std::cout << a << " es mayor que " << b << std::endl; // Esto se imprimirá
+    } else {
+        std::cout << a << " no es mayor que " << b << std::endl;
+    }
+
+    return 0;
+}
