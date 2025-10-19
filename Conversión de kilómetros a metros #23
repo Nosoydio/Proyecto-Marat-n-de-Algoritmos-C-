@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double kilometros, metros;
+    cout << "Ingrese la cantidad de kilómetros: ";
+    cin >> kilometros;
+    metros = kilometros * 1000;
+    cout << kilometros << " kilómetro(s) equivalen a " << metros << " metro(s)." << endl;
+    return 0;
+}
