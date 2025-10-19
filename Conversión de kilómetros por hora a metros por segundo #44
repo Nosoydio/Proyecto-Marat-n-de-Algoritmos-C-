@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double kmh, ms;
+    cout << "Ingrese la velocidad en kilómetros por hora (km/h): ";
+    cin >> kmh;
+    ms = kmh * 1000 / 3600;
+    cout << kmh << " km/h equivalen a " << ms << " m/s." << endl;
+    return 0;
+}
