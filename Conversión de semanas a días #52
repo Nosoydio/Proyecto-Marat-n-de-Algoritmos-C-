@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int semanas, dias;
+    cout << "Ingrese la cantidad de semanas: ";
+    cin >> semanas;
+    dias = semanas * 7;
+    cout << semanas << " semanas equivalen a " << dias << " días." << endl;
+    return 0;
+}
