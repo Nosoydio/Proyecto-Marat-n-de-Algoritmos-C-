@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double velocidad, tiempo, distancia;
+    cout << "Ingrese la velocidad (en m/s): ";
+    cin >> velocidad;
+    cout << "Ingrese el tiempo (en segundos): ";
+    cin >> tiempo;
+    distancia = velocidad * tiempo;
+    cout << "La distancia recorrida es: " << distancia << " metros." << endl;
+    return 0;
+}
