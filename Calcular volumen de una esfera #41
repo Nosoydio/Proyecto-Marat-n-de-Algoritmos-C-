@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double radio, volumen;
+    cout << "Ingrese el radio de la esfera: ";
+    cin >> radio;
+    volumen = (4.0 / 3.0) * 3.1416 * radio * radio * radio;
+    cout << "El volumen de la esfera es: " << volumen << endl;
+    return 0;
+}
