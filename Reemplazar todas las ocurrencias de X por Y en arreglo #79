@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, x, y;
+    cout << "Ingrese la cantidad de elementos del arreglo: ";
+    cin >> n;
+    int arreglo[n];
+    for (int i = 0; i < n; i++) {
+        cout << "Elemento " << i + 1 << ": ";
+        cin >> arreglo[i];
+    }
+
+    cout << "Ingrese el valor a reemplazar (X): ";
+    cin >> x;
+    cout << "Ingrese el nuevo valor (Y): ";
+    cin >> y;
+
+    for (int i = 0; i < n; i++) {
+        if (arreglo[i] == x) {
+            arreglo[i] = y;
+        }
+    }
+
+    cout << "Arreglo modificado: ";
+    for (int i = 0; i < n; i++) {
+        cout << arreglo[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
