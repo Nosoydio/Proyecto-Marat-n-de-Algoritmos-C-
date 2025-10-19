@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int filas, columnas;
+    cout << "Ingrese el número de filas: ";
+    cin >> filas;
+    cout << "Ingrese el número de columnas: ";
+    cin >> columnas;
+
+    vector<vector<int>> matriz(filas, vector<int>(columnas));
+    vector<int> sumaColumnas(columnas, 0);
+
+    cout << "Ingrese los elementos de la matriz:" << endl;
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            cout << "Elemento [" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+            sumaColumnas[j] += matriz[i][j];
+        }
+    }
+
+    int sumaMinima = sumaColumnas[0];
+    int indiceColumnaMinima = 0;
+
+    for (int j = 1; j < columnas; j++) {
+        if (sumaColumnas[j] < sumaMinima) {
+            sumaMinima = sumaColumnas[j];
+            indiceColumnaMinima = j;
+        }
+    }
+
+    cout << "La columna con menor suma es la columna " << indiceColumnaMinima
+         << " con una suma de " << sumaMinima << "." << endl;
+
+    return 0;
+}
