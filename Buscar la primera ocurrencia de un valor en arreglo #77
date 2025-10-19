@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, valor, posicion = -1;
+    cout << "Ingrese la cantidad de elementos del arreglo: ";
+    cin >> n;
+    int arreglo[n];
+    for (int i = 0; i < n; i++) {
+        cout << "Elemento " << i + 1 << ": ";
+        cin >> arreglo[i];
+    }
+
+    cout << "Ingrese el valor a buscar: ";
+    cin >> valor;
+
+    for (int i = 0; i < n; i++) {
+        if (arreglo[i] == valor) {
+            posicion = i;
+            break;
+        }
+    }
+
+    if (posicion != -1) {
+        cout << "Primera ocurrencia del valor " << valor << " en la posición " << posicion << "." << endl;
+    } else {
+        cout << "El valor no se encuentra en el arreglo." << endl;
+    }
+
+    return 0;
+}
