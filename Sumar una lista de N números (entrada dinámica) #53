@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    double numero, suma = 0;
+    cout << "Ingrese la cantidad de números a sumar: ";
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        cout << "Ingrese el número " << i << ": ";
+        cin >> numero;
+        suma += numero;
+    }
+    cout << "La suma total es: " << suma << endl;
+    return 0;
+}
