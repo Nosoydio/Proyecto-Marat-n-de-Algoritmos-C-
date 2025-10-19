@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int dimension;
+    cout << "Ingrese la dimensión de la matriz (N): ";
+    cin >> dimension;
+
+    vector<vector<int>> matriz(dimension, vector<int>(dimension));
+    int sumaDiagonal = 0;
+
+    cout << "Ingrese los elementos de la matriz:" << endl;
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            cout << "Elemento [" << fila << "][" << columna << "]: ";
+            cin >> matriz[fila][columna];
+            if (fila == columna) {
+                sumaDiagonal += matriz[fila][columna];
+            }
+        }
+    }
+
+    cout << "La suma de la diagonal principal es: " << sumaDiagonal << endl;
+
+    return 0;
+}
