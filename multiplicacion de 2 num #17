@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, producto;
+    cout << "Ingrese el primer número: ";
+    cin >> num1;
+    cout << "Ingrese el segundo número: ";
+    cin >> num2;
+    producto = num1 * num2;
+    cout << "El producto de " << num1 << " por " << num2 << " es: " << producto << endl;
+    return 0;
+}
