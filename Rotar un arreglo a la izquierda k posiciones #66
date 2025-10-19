@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, k;
+    cout << "Ingrese la cantidad de elementos del arreglo: ";
+    cin >> n;
+    int arreglo[n];
+    for (int i = 0; i < n; i++) {
+        cout << "Elemento " << i + 1 << ": ";
+        cin >> arreglo[i];
+    }
+    cout << "Ingrese la cantidad de posiciones a rotar a la izquierda: ";
+    cin >> k;
+    k = k % n;
+
+    for (int i = 0; i < k; i++) {
+        int primero = arreglo[0];
+        for (int j = 0; j < n - 1; j++) {
+            arreglo[j] = arreglo[j + 1];
+        }
+        arreglo[n - 1] = primero;
+    }
+
+    cout << "Arreglo rotado a la izquierda " << k << " posiciones: ";
+    for (int i = 0; i < n; i++) {
+        cout << arreglo[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
