@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double apotema, perimetro, area;
+    cout << "Ingrese el apotema del polígono: ";
+    cin >> apotema;
+    cout << "Ingrese el perímetro del polígono: ";
+    cin >> perimetro;
+    area = (apotema * perimetro) / 2;
+    cout << "El área del polígono regular es: " << area << endl;
+    return 0;
+}
