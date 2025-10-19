@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double kelvin, celsius;
+    cout << "Ingrese la temperatura en Kelvin: ";
+    cin >> kelvin;
+    celsius = kelvin - 273.15;
+    cout << kelvin << " Kelvin equivalen a " << celsius << " grados Celsius." << endl;
+    return 0;
+}
