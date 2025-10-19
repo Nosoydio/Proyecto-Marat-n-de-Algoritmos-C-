@@ -1,0 +1,47 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int filas, columnas;
+    cout << "Ingrese el número de filas: ";
+    cin >> filas;
+    cout << "Ingrese el número de columnas: ";
+    cin >> columnas;
+
+    vector<vector<int>> matriz(filas, vector<int>(columnas));
+
+    cout << "Ingrese los elementos de la matriz:" << endl;
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            cout << "Elemento [" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+        }
+    }
+
+    int filaObjetivo;
+    cout << "Ingrese el índice de la fila que desea reemplazar por su suma (0 a " << filas - 1 << "): ";
+    cin >> filaObjetivo;
+
+    if (filaObjetivo >= 0 && filaObjetivo < filas) {
+        int suma = 0;
+        for (int j = 0; j < columnas; j++) {
+            suma += matriz[filaObjetivo][j];
+        }
+        for (int j = 0; j < columnas; j++) {
+            matriz[filaObjetivo][j] = suma;
+        }
+
+        cout << "Matriz modificada:" << endl;
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                cout << matriz[i][j] << " ";
+            }
+            cout << endl;
+        }
+    } else {
+        cout << "Índice de fila inválido." << endl;
+    }
+
+    return 0;
+}
