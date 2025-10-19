@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double diagonal_mayor, diagonal_menor, area;
+    cout << "Ingrese la diagonal mayor del rombo: ";
+    cin >> diagonal_mayor;
+    cout << "Ingrese la diagonal menor del rombo: ";
+    cin >> diagonal_menor;
+    area = (diagonal_mayor * diagonal_menor) / 2;
+    cout << "El área del rombo es: " << area << endl;
+    return 0;
+}
