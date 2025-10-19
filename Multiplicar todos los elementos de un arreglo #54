@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    double producto = 1;
+    cout << "Ingrese la cantidad de elementos del arreglo: ";
+    cin >> n;
+    double arreglo[n];
+    for (int i = 0; i < n; i++) {
+        cout << "Ingrese el elemento " << i + 1 << ": ";
+        cin >> arreglo[i];
+        producto *= arreglo[i];
+    }
+    cout << "El producto de todos los elementos es: " << producto << endl;
+    return 0;
+}
