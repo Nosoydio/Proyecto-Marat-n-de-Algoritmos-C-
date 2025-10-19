@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double base, altura, perimetro;
+    cout << "Ingrese la base del rectángulo: ";
+    cin >> base;
+    cout << "Ingrese la altura del rectángulo: ";
+    cin >> altura;
+    perimetro = 2 * (base + altura);
+    cout << "El perímetro del rectángulo es: " << perimetro << endl;
+    return 0;
+}
