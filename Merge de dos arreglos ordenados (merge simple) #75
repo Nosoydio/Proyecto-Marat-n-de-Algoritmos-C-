@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n1, n2;
+    cout << "Ingrese la cantidad de elementos del primer arreglo: ";
+    cin >> n1;
+    int A[n1];
+    for (int i = 0; i < n1; i++) {
+        cout << "A[" << i << "]: ";
+        cin >> A[i];
+    }
+
+    cout << "Ingrese la cantidad de elementos del segundo arreglo: ";
+    cin >> n2;
+    int B[n2];
+    for (int i = 0; i < n2; i++) {
+        cout << "B[" << i << "]: ";
+        cin >> B[i];
+    }
+
+    int C[n1 + n2];
+    int i = 0, j = 0, k = 0;
+
+    while (i < n1 && j < n2) {
+        if (A[i] <= B[j]) {
+            C[k++] = A[i++];
+        } else {
+            C[k++] = B[j++];
+        }
+    }
+
+    while (i < n1) {
+        C[k++] = A[i++];
+    }
+
+    while (j < n2) {
+        C[k++] = B[j++];
+    }
+
+    cout << "Arreglo combinado ordenado: ";
+    for (int m = 0; m < n1 + n2; m++) {
+        cout << C[m] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
