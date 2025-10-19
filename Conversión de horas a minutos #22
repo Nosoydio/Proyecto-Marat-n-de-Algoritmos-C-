@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int horas, minutos;
+    cout << "Ingrese la cantidad de horas: ";
+    cin >> horas;
+    minutos = horas * 60;
+    cout << horas << " hora(s) equivalen a " << minutos << " minuto(s)." << endl;
+    return 0;
+}
