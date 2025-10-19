@@ -1,33 +1,45 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
 int main() {
-    int n;
+    int cantidadElementos;
     cout << "Ingrese la cantidad de elementos del arreglo: ";
-    cin >> n;
-    int arreglo[n];
-    for (int i = 0; i < n; i++) {
-        cout << "Elemento " << i + 1 << ": ";
-        cin >> arreglo[i];
+    cin >> cantidadElementos;
+
+    if (cantidadElementos < 2) {
+        cout << "Se requieren al menos dos elementos para encontrar el segundo mayor." << endl;
+        return 0;
     }
 
-    int max1 = INT_MIN, max2 = INT_MIN;
-    int idx1 = -1, idx2 = -1;
+    int arreglo[cantidadElementos];
+    for (int indice = 0; indice < cantidadElementos; indice++) {
+        cout << "Elemento " << indice + 1 << ": ";
+        cin >> arreglo[indice];
+    }
 
-    for (int i = 0; i < n; i++) {
-        if (arreglo[i] > max1) {
-            max2 = max1;
-            idx2 = idx1;
-            max1 = arreglo[i];
-            idx1 = i;
-        } else if (arreglo[i] > max2 && arreglo[i] != max1) {
-            max2 = arreglo[i];
-            idx2 = i;
+    int mayorValor = INT_MIN;
+    int segundoMayorValor = INT_MIN;
+    int indiceMayor = -1;
+    int indiceSegundoMayor = -1;
+
+    for (int indice = 0; indice < cantidadElementos; indice++) {
+        int valorActual = arreglo[indice];
+
+        if (valorActual > mayorValor) {
+            segundoMayorValor = mayorValor;
+            indiceSegundoMayor = indiceMayor;
+
+            mayorValor = valorActual;
+            indiceMayor = indice;
+        } else if (valorActual > segundoMayorValor && valorActual < mayorValor) {
+            segundoMayorValor = valorActual;
+            indiceSegundoMayor = indice;
         }
     }
 
-    if (idx2 != -1) {
-        cout << "Índice del segundo mayor elemento: " << idx2 << endl;
+    if (indiceSegundoMayor != -1) {
+        cout << "Índice del segundo mayor elemento: " << indiceSegundoMayor << endl;
     } else {
         cout << "No hay un segundo mayor distinto en el arreglo." << endl;
     }
