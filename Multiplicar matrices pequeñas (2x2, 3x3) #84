@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int dimension;
+    cout << "Ingrese la dimensión de las matrices (2 o 3): ";
+    cin >> dimension;
+
+    if (dimension != 2 && dimension != 3) {
+        cout << "Solo se permite dimensión 2x2 o 3x3." << endl;
+        return 0;
+    }
+
+    vector<vector<int>> matrizA(dimension, vector<int>(dimension));
+    vector<vector<int>> matrizB(dimension, vector<int>(dimension));
+    vector<vector<int>> matrizProducto(dimension, vector<int>(dimension, 0));
+
+    cout << "Ingrese los elementos de la matriz A:" << endl;
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            cout << "A[" << fila << "][" << columna << "]: ";
+            cin >> matrizA[fila][columna];
+        }
+    }
+
+    cout << "Ingrese los elementos de la matriz B:" << endl;
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            cout << "B[" << fila << "][" << columna << "]: ";
+            cin >> matrizB[fila][columna];
+        }
+    }
+
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            for (int k = 0; k < dimension; k++) {
+                matrizProducto[fila][columna] += matrizA[fila][k] * matrizB[k][columna];
+            }
+        }
+    }
+
+    cout << "La matriz producto es:" << endl;
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            cout << matrizProducto[fila][columna] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
