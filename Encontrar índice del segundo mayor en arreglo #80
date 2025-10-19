@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese la cantidad de elementos del arreglo: ";
+    cin >> n;
+    int arreglo[n];
+    for (int i = 0; i < n; i++) {
+        cout << "Elemento " << i + 1 << ": ";
+        cin >> arreglo[i];
+    }
+
+    int max1 = INT_MIN, max2 = INT_MIN;
+    int idx1 = -1, idx2 = -1;
+
+    for (int i = 0; i < n; i++) {
+        if (arreglo[i] > max1) {
+            max2 = max1;
+            idx2 = idx1;
+            max1 = arreglo[i];
+            idx1 = i;
+        } else if (arreglo[i] > max2 && arreglo[i] != max1) {
+            max2 = arreglo[i];
+            idx2 = i;
+        }
+    }
+
+    if (idx2 != -1) {
+        cout << "Índice del segundo mayor elemento: " << idx2 << endl;
+    } else {
+        cout << "No hay un segundo mayor distinto en el arreglo." << endl;
+    }
+
+    return 0;
+}
