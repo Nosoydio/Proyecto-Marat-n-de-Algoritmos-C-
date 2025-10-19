@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double lado, perimetro;
+    cout << "Ingrese la longitud del lado del rombo: ";
+    cin >> lado;
+    perimetro = 4 * lado;
+    cout << "El perímetro del rombo es: " << perimetro << endl;
+    return 0;
+}
