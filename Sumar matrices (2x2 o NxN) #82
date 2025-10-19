@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int dimension;
+    cout << "Ingrese la dimensión de las matrices (N): ";
+    cin >> dimension;
+
+    vector<vector<int>> matrizA(dimension, vector<int>(dimension));
+    vector<vector<int>> matrizB(dimension, vector<int>(dimension));
+    vector<vector<int>> matrizSuma(dimension, vector<int>(dimension));
+
+    cout << "Ingrese los elementos de la matriz A:" << endl;
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            cout << "A[" << fila << "][" << columna << "]: ";
+            cin >> matrizA[fila][columna];
+        }
+    }
+
+    cout << "Ingrese los elementos de la matriz B:" << endl;
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            cout << "B[" << fila << "][" << columna << "]: ";
+            cin >> matrizB[fila][columna];
+        }
+    }
+
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            matrizSuma[fila][columna] = matrizA[fila][columna] + matrizB[fila][columna];
+        }
+    }
+
+    cout << "La matriz suma es:" << endl;
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            cout << matrizSuma[fila][columna] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
