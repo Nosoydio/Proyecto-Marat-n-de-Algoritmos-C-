@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double metros, centimetros;
+    cout << "Ingrese la cantidad de metros: ";
+    cin >> metros;
+    centimetros = metros * 100;
+    cout << metros << " metro(s) equivalen a " << centimetros << " centímetro(s)." << endl;
+    return 0;
+}
