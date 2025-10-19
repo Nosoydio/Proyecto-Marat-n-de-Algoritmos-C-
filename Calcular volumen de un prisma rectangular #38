@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double largo, ancho, altura, volumen;
+    cout << "Ingrese el largo del prisma: ";
+    cin >> largo;
+    cout << "Ingrese el ancho del prisma: ";
+    cin >> ancho;
+    cout << "Ingrese la altura del prisma: ";
+    cin >> altura;
+    volumen = largo * ancho * altura;
+    cout << "El volumen del prisma rectangular es: " << volumen << endl;
+    return 0;
+}
