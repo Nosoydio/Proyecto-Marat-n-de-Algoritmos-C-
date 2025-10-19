@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese la cantidad de elementos del arreglo: ";
+    cin >> n;
+    int arreglo[n];
+    for (int i = 0; i < n; i++) {
+        cout << "Elemento " << i + 1 << ": ";
+        cin >> arreglo[i];
+    }
+
+    for (int i = 0; i < n / 2; i++) {
+        int temp = arreglo[i];
+        arreglo[i] = arreglo[n - 1 - i];
+        arreglo[n - 1 - i] = temp;
+    }
+
+    cout << "Arreglo invertido: ";
+    for (int i = 0; i < n; i++) {
+        cout << arreglo[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
