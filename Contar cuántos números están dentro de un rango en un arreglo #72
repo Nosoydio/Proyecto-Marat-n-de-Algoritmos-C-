@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, inferior, superior, contador = 0;
+    cout << "Ingrese la cantidad de elementos del arreglo: ";
+    cin >> n;
+    int arreglo[n];
+    for (int i = 0; i < n; i++) {
+        cout << "Elemento " << i + 1 << ": ";
+        cin >> arreglo[i];
+    }
+    cout << "Ingrese el límite inferior del rango: ";
+    cin >> inferior;
+    cout << "Ingrese el límite superior del rango: ";
+    cin >> superior;
+
+    for (int i = 0; i < n; i++) {
+        if (arreglo[i] >= inferior && arreglo[i] <= superior) {
+            contador++;
+        }
+    }
+
+    cout << "Cantidad de elementos dentro del rango [" << inferior << ", " << superior << "]: " << contador << endl;
+    return 0;
+}
