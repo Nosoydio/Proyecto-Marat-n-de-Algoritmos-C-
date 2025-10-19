@@ -1,0 +1,49 @@
+#include <iostream>
+#include <limits>
+using namespace std;
+
+int main() {
+    int cantidadElementos;
+    cout << "Ingrese la cantidad de elementos del arreglo: ";
+    cin >> cantidadElementos;
+
+    if (cantidadElementos < 2) {
+        cout << "Se requieren al menos dos elementos para continuar." << endl;
+        return 0;
+    }
+
+    int arreglo[cantidadElementos];
+    for (int indice = 0; indice < cantidadElementos; indice++) {
+        cout << "Elemento " << indice + 1 << ": ";
+        cin >> arreglo[indice];
+    }
+
+    int menorValor = numeric_limits<int>::max();
+    int segundoMenorValor = numeric_limits<int>::max();
+    int indiceMenor = -1;
+    int indiceSegundoMenor = -1;
+
+    for (int indice = 0; indice < cantidadElementos; indice++) {
+        int valorActual = arreglo[indice];
+
+        if (valorActual < menorValor) {
+            segundoMenorValor = menorValor;
+            indiceSegundoMenor = indiceMenor;
+
+            menorValor = valorActual;
+            indiceMenor = indice;
+        } else if (valorActual < segundoMenorValor && valorActual > menorValor) {
+            segundoMenorValor = valorActual;
+            indiceSegundoMenor = indice;
+        }
+    }
+
+    if (indiceSegundoMenor != -1) {
+        cout << "El segundo menor valor es " << segundoMenorValor
+             << " y se encuentra en el índice " << indiceSegundoMenor << "." << endl;
+    } else {
+        cout << "No hay un segundo menor distinto en el arreglo." << endl;
+    }
+
+    return 0;
+}
