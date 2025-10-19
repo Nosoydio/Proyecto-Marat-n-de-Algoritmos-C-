@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese la cantidad de elementos del arreglo: ";
+    cin >> n;
+    double arreglo[n];
+    for (int i = 0; i < n; i++) {
+        cout << "Ingrese el elemento " << i + 1 << ": ";
+        cin >> arreglo[i];
+    }
+    double maximo = arreglo[0];
+    for (int i = 1; i < n; i++) {
+        if (arreglo[i] > maximo) {
+            maximo = arreglo[i];
+        }
+    }
+    cout << "El valor máximo en el arreglo es: " << maximo << endl;
+    return 0;
+}
