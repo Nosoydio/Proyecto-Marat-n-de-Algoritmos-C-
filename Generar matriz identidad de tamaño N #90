@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int dimension;
+    cout << "Ingrese la dimensión de la matriz identidad (N): ";
+    cin >> dimension;
+
+    vector<vector<int>> matrizIdentidad(dimension, vector<int>(dimension, 0));
+
+    for (int fila = 0; fila < dimension; fila++) {
+        matrizIdentidad[fila][fila] = 1;
+    }
+
+    cout << "La matriz identidad de tamaño " << dimension << " es:" << endl;
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            cout << matrizIdentidad[fila][columna] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
