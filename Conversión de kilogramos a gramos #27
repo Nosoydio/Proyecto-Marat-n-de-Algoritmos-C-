@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double kilogramos, gramos;
+    cout << "Ingrese la cantidad de kilogramos: ";
+    cin >> kilogramos;
+    gramos = kilogramos * 1000;
+    cout << kilogramos << " kilogramo(s) equivalen a " << gramos << " gramo(s)." << endl;
+    return 0;
+}
