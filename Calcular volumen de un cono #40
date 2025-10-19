@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double radio, altura, volumen;
+    cout << "Ingrese el radio del cono: ";
+    cin >> radio;
+    cout << "Ingrese la altura del cono: ";
+    cin >> altura;
+    volumen = (3.1416 * radio * radio * altura) / 3;
+    cout << "El volumen del cono es: " << volumen << endl;
+    return 0;
+}
