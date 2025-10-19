@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int dimension;
+    cout << "Ingrese la dimensión de la matriz (N): ";
+    cin >> dimension;
+
+    vector<vector<int>> matrizOriginal(dimension, vector<int>(dimension));
+    vector<vector<int>> matrizTranspuesta(dimension, vector<int>(dimension));
+
+    cout << "Ingrese los elementos de la matriz:" << endl;
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            cout << "Elemento [" << fila << "][" << columna << "]: ";
+            cin >> matrizOriginal[fila][columna];
+        }
+    }
+
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            matrizTranspuesta[columna][fila] = matrizOriginal[fila][columna];
+        }
+    }
+
+    cout << "La matriz transpuesta es:" << endl;
+    for (int fila = 0; fila < dimension; fila++) {
+        for (int columna = 0; columna < dimension; columna++) {
+            cout << matrizTranspuesta[fila][columna] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
