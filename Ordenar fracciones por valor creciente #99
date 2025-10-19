@@ -1,0 +1,43 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+struct Fraccion {
+    int numerador;
+    int denominador;
+
+    double valor() const {
+        return static_cast<double>(numerador) / denominador;
+    }
+};
+
+int main() {
+    int cantidad;
+    cout << "Ingrese la cantidad de fracciones: ";
+    cin >> cantidad;
+
+    vector<Fraccion> fracciones(cantidad);
+
+    for (int i = 0; i < cantidad; i++) {
+        cout << "Fracción " << i + 1 << " (numerador y denominador): ";
+        cin >> fracciones[i].numerador >> fracciones[i].denominador;
+
+        if (fracciones[i].denominador == 0) {
+            cout << "Error: el denominador no puede ser cero." << endl;
+            return 0;
+        }
+    }
+
+    sort(fracciones.begin(), fracciones.end(), [](const Fraccion& a, const Fraccion& b) {
+        return a.valor() < b.valor();
+    });
+
+    cout << "Fracciones ordenadas por valor creciente:" << endl;
+    for (const auto& f : fracciones) {
+        cout << f.numerador << "/" << f.denominador << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
